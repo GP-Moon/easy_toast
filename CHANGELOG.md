@@ -1,3 +1,7 @@
-## [0.0.1] - TODO: Add release date.
+## 0.0.1
 
-* TODO: Describe initial release.
+* First release.
+
+## 0.0.2
+
+* Update context_holder version to 0.0.4.

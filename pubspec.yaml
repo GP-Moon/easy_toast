@@ -1,6 +1,6 @@
 name: handy_toast
 description: A toast for flutter and very easy to use! This package depends on context_holder, another very useful package.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/GP-Moon/handy_toast
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  context_holder: ^0.0.3
+  context_holder: ^0.0.4
 
 dev_dependencies:
   flutter_test:
