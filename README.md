@@ -7,7 +7,7 @@ Depends on [context_holder](https://github.com/GP-Moon/context_holder)
 
 ```dart
 dependencies:
-  handy_toast: ^0.0.2
+  handy_toast: ^0.0.3
 ```
 
 ### 2. Init context holder.
@@ -56,4 +56,15 @@ import 'package:handy_toast/handy_toast.dart';
 
 ```dart
 'handy toast'.toast();
+```
+
+### 4. Other option
+
+Change default style.
+
+```dart
+/// change toast background color to green with opacity.
+Toast.defaultStyle = ToastStyle(
+  color: Colors.green.withOpacity(0.8),
+);
 ```

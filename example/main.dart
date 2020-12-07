@@ -12,6 +12,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    /// change toast default style
+    Toast.defaultStyle = ToastStyle(
+      color: Colors.green.withOpacity(0.8),
+    );
     return MaterialApp(
       navigatorKey: ContextHolder.key,
       title: 'Flutter Demo',
