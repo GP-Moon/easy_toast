@@ -7,7 +7,7 @@ Depends on [context_holder](https://github.com/GP-Moon/context_holder)
 
 ```dart
 dependencies:
-  handy_toast: ^0.0.3
+  handy_toast: ^0.0.4
 ```
 
 ### 2. Init context holder.

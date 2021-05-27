@@ -23,15 +23,13 @@ class Toast {
   /// Toast a message to screen.
   static void toast(
     dynamic message, {
-    ToastStyle style,
+    ToastStyle? style,
     int duration = Toast.SHORT,
     Gravity gravity = Gravity.bottom,
   }) {
     assert(_supportedMessage(message), 'message type ${message.runtimeType} not supported!!');
-    assert(duration != null, 'duration should not be null!!');
-    assert(gravity != null, 'gravity should not be null!!');
     OverlayEntry entry = OverlayEntry(builder: (context) {
-      _ToastWidget widget = _ToastWidget(message, style ?? _style ?? const ToastStyle(), gravity);
+      _ToastWidget widget = _ToastWidget(message, style ?? _style, gravity);
       return widget;
     });
     ContextHolder.currentOverlay.insert(entry);
@@ -56,7 +54,7 @@ class ToastStyle {
   final double radius;
 
   /// Toast background border.
-  final Border border;
+  final Border? border;
 
   /// Toast background padding.
   final EdgeInsets padding;
@@ -79,9 +77,7 @@ class ToastStyle {
       color: Colors.white,
       decoration: TextDecoration.none,
     ),
-  })  : assert(color != null),
-        assert(radius != null),
-        assert(style != null);
+  });
 }
 
 /// Toast gravity.
@@ -99,11 +95,10 @@ enum Gravity {
 /// String extension function for toast.
 extension ToastableString on String {
   void toast({
-    ToastStyle style,
+    ToastStyle? style,
     int duration = 1,
     Gravity gravity = Gravity.bottom,
   }) {
-    if (this == null) return;
     Toast.toast(
       this,
       duration: duration,
@@ -116,11 +111,10 @@ extension ToastableString on String {
 /// Widget extension function for toast.
 extension ToastableWidget on Widget {
   void toast({
-    ToastStyle style,
+    ToastStyle? style,
     int duration = 1,
     Gravity gravity = Gravity.bottom,
   }) {
-    if (this == null) return;
     Toast.toast(
       this,
       duration: duration,
